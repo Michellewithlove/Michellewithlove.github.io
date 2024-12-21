@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио фотографа</title>
+    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDMincho&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/script.js"></script>
+
+</head>
+<body>
+    <!-- Меню -->
+    <header>
+        <nav class="menu">
+            <ul>
+                <li><a href="#about">О себе</a></li>
+                <li><a href="#portfolio">Портфолио</a></li>
+                <li><a href="#presets">Пресеты</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Главный блок -->
+    <section class="hero" id="about">
+        <div class="hero-content">
+            <h1>С любовью, Мишель</h1>
+            <p>Фотограф</p>
+        </div>
+    </section>
+
+    <!-- Раздел "О себе" -->
+    <section id="about">
+        <!-- Бегущая строка -->
+        
+        <div class="marquee">
+            <span class="marquee-content">Кто я? Кто я? Кто я? Кто я? Кто я? Кто я? Кто я? Кто я? Кто я? Кто я? Кто я? Кто я?</span>
+        </div>
+
+
+        <!-- Текст "О себе" -->
+        <div class="about-text">
+            <img src="images/me1.png" alt="Me" class="about-image" />
+            <p>Меня зовут Мишель, и </p>
+            <p>много лет я занимаюсь фотографией.</p>
+            <br> <!-- Разрыв строки -->
+            <p>Это не просто мое хобби, а</p>
+            <p>источник неиссякаемой</p>
+            <p>страсти и вдохновения.</p>
+            <br> <!-- Разрыв строки -->
+            <p>Фотография для меня – </p>
+            <p>способ запечатлеть красоту</p>
+            <p>момента и передать его</p>
+            <p>эмоциональную суть.</p>
+
+
+        </div>
+        
+
+        <!-- Надпись "Я наслаждаюсь" -->
+        <div class="enjoy-text">
+            <p>Я наслаждаюсь</p>
+        </div>
+        <!-- Блок с фото и текстом -->
+        <div class="text-with-photo">
+            <img src="images/me2.png" alt="Me2">
+            <div>
+                <p>возможностью показать</p>
+                <p>людей красивыми и при этом</p>
+                <p>придать каждому снимку</p>
+                <p>свою неповторимую</p>
+                <p>атмосферу.</p>
+                <br> <!-- Разрыв строки -->
+                <p>Быть фотографом для меня</p>
+                <p>– значит быть создателем</p>
+                <p>историй, которые оставят</p>
+                <p>свой след в сердцах тех,</p>
+                <p>кто видит мои фотографии.</p>
+            </div>
+        </div>
+
+    <!-- Контейнер для всех блоков портфолио -->
+    <section id="portfolio">
+        <div class="portfolio-container">
+            <!-- Первый блок -->
+            <div class="portfolio-item">
+                <p class="category-title">Цифровая фотография</p>
+                <p class="number">1</p>
+                <img src="images/digital-photo.jpg" alt="Цифровая фотография">
+            </div>
+
+            <!-- Второй блок -->
+            <div class="portfolio-item">
+                <p class="category-title">Чековая фотография</p>
+                <p class="number">2</p>
+                <img src="images/check-photo.jpg" alt="Чековая фотография">
+            </div>
+
+            <!-- Третий блок -->
+            <div class="portfolio-item">
+                <p class="category-title">Плёночная фотография</p>
+                <p class="number">3</p>
+                <img src="images/film-photo.jpg" alt="Плёночная фотография">
+            </div>
+        </div>
+    </section>    
+        
+    <section id="presets">
+
+        <div class="slider-container">
+            <!-- Контейнер для изображений -->
+            <div class="image-container">
+                <!-- Необработанное изображение -->
+                <img src="images/untreated1.jpg" id="untreated" class="slider-image" />
+                <!-- Обработанное изображение -->
+                <img src="images/processed1.jpg" id="processed" class="slider-image" />
+                <!-- Ползунок для слайдера -->
+                <input type="range" id="slider" class="slider" min="0" max="100" value="50">
+            </div>
+
+            <!-- Кнопки для выбора набора изображений -->
+            <div class="buttons">
+                <button id="btn1">#1</button>
+                <button id="btn2">#2</button>
+                <button id="btn3">#3</button>
+                <button id="btn4">#4</button>
+                <button id="btn5">#5</button>
+                <button id="btn6">#6</button>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contacts">
+        <h2>Контакты</h2>
+        <!-- Контакты -->
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <p>© 2024, Мишель</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,327 @@
+/* Сброс базовых стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'BIZ UDMincho', serif;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Меню */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    background-color: black;
+    color: white;
+    z-index: 1000;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 20px 0;
+}
+
+.menu ul li {
+    margin: 0 76px; /* 173px интервал / 2 */
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 26px;
+}
+
+/* Главный блок (hero) */
+.hero {
+    height: 100vh; /* Высота блока 100% от высоты окна */
+    background: url('../images/background.png') no-repeat center top; /* Изображение от верхнего края */
+    background-size: cover; /* Фон растягивается по всей высоте */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end; /* Выравнивание по правому краю */
+    text-align: right; /* Текст выравнивается по правому краю */
+    padding-right: 50px; /* Смещение текста ближе к правому краю */
+}
+
+/* Контент внутри главного блока */
+.hero-content h1 {
+    font-size: 70px;
+    color: white;
+    margin-bottom: 10px; /* 80px от низа фото */
+}
+
+.hero-content p {
+    font-size: 30px;
+    color: white;
+    margin-bottom: -20px; /* 40px от низа фото */
+}
+
+/* Раздел "О себе" */
+#about {
+    padding: 80px 20px;
+    background-color: #f4f4f4;
+}
+
+/* Контейнер для бегущей строки */
+.marquee {
+    width: 100%; /* Ширина блока */
+    overflow: hidden; /* Скрываем лишний текст */
+    white-space: nowrap; /* Не переносим текст на новую строку */
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    padding: 5px 0; /* Отступы сверху и снизу */
+}
+
+/* Текст внутри бегущей строки */
+.marquee-content {
+    display: inline-block;
+    font-family: 'Anonymous Pro', sans-serif;
+    font-size: 66px; /* Размер текста */
+    white-space: nowrap;
+    animation: marquee 5s linear infinite; /* Анимация */
+    color: black; /* Цвет текста */
+}
+
+/* Анимация */
+@keyframes marquee {
+    from {
+        transform: translateX(0%); /* Начало за пределами правого края */
+    }
+    to {
+        transform: translateX(-10%); /* Конец за пределами левого края */
+    }
+}
+
+/* Текст с левой стороны */
+.about-text {
+    font-family: 'Anonymous Pro', sans-serif;
+    font-size: 40px;
+    line-height: 1.4;
+    color: #333;
+    margin-bottom: 80px;
+}
+
+/* Фото справа от текста */
+.about-image {
+    float: right;
+    margin-left: 40px;
+    width: 500px; /* Задайте нужный размер изображения */
+}
+
+/* Текст "Я наслаждаюсь" */
+.enjoy-text {
+    font-family: 'Anonymous Pro', sans-serif;
+    font-size: 160px;
+    color: #B20000;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: right; /* Сдвигает текст вправо */
+}
+
+/* Блок с фото и текстом, выравнивание с использованием Flexbox */
+.text-with-photo {
+    display: flex;
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+    margin-bottom: 30px; /* Отступ между блоками */
+}
+
+/* Фото слева */
+.text-with-photo img {
+    width: 500px; /* Задайте нужный размер изображения */
+    margin-right: 280px; /* Отступ между фото и текстом */
+}
+
+/* Текст справа от фото */
+.text-with-photo div {
+    font-family: 'Anonymous Pro', sans-serif;
+    font-size: 40px;
+    line-height: 1.4;
+    color: #333;
+    width: 100%; /* Текст займет всю оставшуюся ширину */
+}
+
+/* Каждый абзац текста */
+.text-with-photo p {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Устанавливаем box-sizing для всех элементов */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Устанавливаем box-sizing для всех элементов */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Контейнер для всех блоков */
+.portfolio-container {
+    display: flex; /* Используем Flexbox для горизонтального расположения */
+    justify-content: space-between; /* Располагаем блоки с промежутком */
+    gap: 5px; /* Уменьшаем промежуток между блоками */
+    margin-top: 10px;
+    width: 100%; /* Убедимся, что контейнер занимает 100% ширины */
+    flex-wrap: wrap; /* Разрешаем перенос блоков на следующую строку */
+}
+
+/* Стили для каждого блока портфолио */
+.portfolio-item {
+    width: 33%; /* Каждый блок занимает 1/3 ширины контейнера */
+    height: 800px; /* Увеличиваем высоту блоков */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    position: relative;
+    overflow: hidden; /* Скрываем содержимое, выходящее за пределы блока */
+}
+
+/* Заголовок категории */
+.category-title {
+    font-family: 'BIZ UDMincho', serif;
+    font-size: 44px;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Цифры */
+.number {
+    font-family: 'BIZ UDMincho', serif;
+    font-size: 400px;
+    color: white;
+    text-align: center;
+}
+
+/* Фото внутри блока */
+.portfolio-item img {
+    width: 120%;
+    height: 100%;
+    object-fit: cover; /* Заполнение блока изображением */
+    opacity: 0; /* Исходно скрыто */
+    transition: opacity 0.5s ease-in-out; /* Плавное появление */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Показываем фото при наведении */
+.portfolio-item:hover img {
+    opacity: 1; /* Делает изображение видимым при наведении */
+}
+
+/* Стили для заголовков внутри блока */
+.portfolio-item .category-title, 
+.portfolio-item .number {
+    z-index: 1; /* Текст всегда поверх изображения */
+}
+
+
+
+/* Контейнер для слайдера и кнопок */
+.slider-container {
+    display: flex; /* Выставляем блоки рядом */
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 30px; /* Промежуток между изображениями и кнопками */
+}
+
+/* Контейнер для изображений */
+.image-container {
+    position: relative;
+    width: 603px; /* Ширина фото */
+    height: 904px; /* Высота фото */
+    overflow: hidden;
+    margin-right: 30px;
+}
+
+/* Стили для изображений */
+.slider-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+/* Стили для ползунка */
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    cursor: ew-resize;
+    z-index: 10;
+    -webkit-appearance: none;
+    border-radius: 5px;
+    transform: translateY(-50%);
+}
+
+/* Стрелки на ползунке */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid black;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    background-color: #B40000;
+}
+
+/* Стили для кнопок */
+.buttons {
+    display: flex;
+    flex-direction: column; /* Располагаем кнопки в столбик */
+    gap: 10px; /* Промежуток между кнопками */
+    font-family: 'BIZ UDMincho', serif;
+    font-size: 50px;
+    align-items: flex-start;
+}
+
+/* Стили для кнопок */
+.buttons button {
+    color: black;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+/* Активная кнопка */
+.buttons button.active {
+    color: #B40000; /* Когда кнопка активна */
+}
+
+/* Стили для текста "До/После" */
+#presets h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'BIZ UDMincho', serif;
+    font-size: 40px;
+    color: white;
+    text-align: center;
+}
