@@ -1,3 +1,17 @@
+document.addEventListener("DOMContentLoaded", function() {
+    // Показываем сообщение при загрузке страницы
+    var popup = document.getElementById("message-popup");
+    popup.style.display = "flex";
+
+    // Закрываем сообщение при нажатии на кнопку
+    var closeButton = document.getElementById("close-popup");
+    closeButton.addEventListener("click", function() {
+        popup.style.display = "none";
+    });
+});
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const marqueeContent = document.querySelector(".marquee-content");
 
@@ -8,38 +22,34 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// Получаем элементы
-const slider = document.getElementById('slider');
-const untreated = document.getElementById('untreated');
-const processed = document.getElementById('processed');
 
-// Получаем кнопки
-const buttons = document.querySelectorAll('.buttons button');
-
-// Функция для обновления слайдера
-slider.addEventListener('input', function () {
-    const value = slider.value;
-    // Меняем прозрачность на основе ползунка
-    untreated.style.clipPath = `inset(0 ${100 - value}% 0 0)`;
-    processed.style.clipPath = `inset(0 0 0 ${value}%)`;
-});
-
-// Функция для смены изображений по кнопке
-buttons.forEach(button => {
-    button.addEventListener('click', function () {
-        // Делаем все кнопки неактивными
-        buttons.forEach(btn => btn.classList.remove('active'));
-        // Активируем текущую кнопку
-        button.classList.add('active');
-
-        // Получаем номер кнопки (например, #1, #2 и т.д.)
-        const index = button.textContent.replace('#', '') - 1;
-
-        // Обновляем изображения
-        untreated.src = `images/untreated${index + 1}.jpg`;
-        processed.src = `images/processed${index + 1}.jpg`;
-
-        // Сбрасываем ползунок на середину
-        slider.value = 50;
+$(document).ready(function() {
+    // Инициализация плагина TwentyTwenty
+    $(".twentytwenty-container").twentytwenty({
+        default_offset_pct: 0.5, // Изначальная позиция разделителя (по центру)
+        orientation: 'horizontal' // Направление ползунка: горизонтальное
     });
+
+    // Логика для переключения изображений с кнопками
+    $(".preset-btn").on("click", function() {
+        var index = $(this).data("index");
+
+        // Сменить изображения в зависимости от нажатой кнопки
+        var untreatedImg = "images/untreated" + index + ".jpg";
+        var processedImg = "images/processed" + index + ".jpg";
+
+        // Обновить изображения
+        $("#untreated-img").attr("src", untreatedImg);
+        $("#processed-img").attr("src", processedImg);
+
+        // Сделать активной текущую кнопку
+        $(".preset-btn").removeClass("active");
+        $(this).addClass("active");
+
+        // Перезапустить плагин, чтобы он обновил разделительную линию
+        $(".twentytwenty-container").twentytwenty();
+    });
+
+    // Изначально делать первую кнопку активной
+    $(".preset-btn").first().addClass("active");
 });
