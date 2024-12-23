@@ -1,0 +1,580 @@
+/* Сброс базовых стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'BIZ UDMincho', serif;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Меню */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    background-color: black;
+    color: white;
+    z-index: 1000;
+}
+
+/* Стили для модального окна */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный черный фон */
+    display: none; /* Скрыто по умолчанию */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+
+.popup p {
+    font-family: 'BIZ UDMincho', serif;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#close-popup {
+    font-family: 'BIZ UDMincho', serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #B40000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#close-popup:hover {
+    background-color: #a00000;
+}
+
+
+.menu ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 20px 0;
+}
+
+.menu ul li {
+    margin: 0 76px; /* 173px интервал / 2 */
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 26px;
+}
+
+/* Главный блок (hero) */
+.hero {
+    height: 100vh; /* Высота блока 100% от высоты окна */
+    background: url('../images/background.png') no-repeat center top; /* Изображение от верхнего края */
+    background-size: cover; /* Фон растягивается по всей высоте */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end; /* Выравнивание по правому краю */
+    text-align: right; /* Текст выравнивается по правому краю */
+    padding-right: 50px; /* Смещение текста ближе к правому краю */
+}
+
+/* Контент внутри главного блока */
+.hero-content h1 {
+    font-size: 70px;
+    color: white;
+    margin-bottom: 10px; /* 80px от низа фото */
+}
+
+.hero-content p {
+    font-size: 30px;
+    color: white;
+    margin-bottom: -20px; /* 40px от низа фото */
+}
+
+/* Раздел "О себе" */
+#about {
+    padding: 80px 20px;
+    background-color: #f4f4f4;
+}
+
+/* Контейнер для бегущей строки */
+.marquee {
+    width: 100%; /* Ширина блока */
+    overflow: hidden; /* Скрываем лишний текст */
+    white-space: nowrap; /* Не переносим текст на новую строку */
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    padding: 5px 0; /* Отступы сверху и снизу */
+}
+
+/* Текст внутри бегущей строки */
+.marquee-content {
+    display: inline-block;
+    font-family: 'Anonymous Pro', sans-serif;
+    font-size: 66px; /* Размер текста */
+    white-space: nowrap;
+    animation: marquee 5s linear infinite; /* Анимация */
+    color: black; /* Цвет текста */
+}
+
+/* Анимация */
+@keyframes marquee {
+    from {
+        transform: translateX(0%); /* Начало за пределами правого края */
+    }
+    to {
+        transform: translateX(-10%); /* Конец за пределами левого края */
+    }
+}
+
+/* Текст с левой стороны */
+.about-text {
+    font-family: 'Anonymous Pro', sans-serif;
+    font-size: 40px;
+    line-height: 1.4;
+    color: #333;
+    margin-bottom: 80px;
+}
+
+/* Фото справа от текста */
+.about-image {
+    float: right;
+    margin-left: 40px;
+    width: 500px; /* Задайте нужный размер изображения */
+}
+
+/* Текст "Я наслаждаюсь" */
+.enjoy-text {
+    font-family: 'Anonymous Pro', sans-serif;
+    font-size: 160px;
+    color: #B20000;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: right; /* Сдвигает текст вправо */
+}
+
+/* Блок с фото и текстом, выравнивание с использованием Flexbox */
+.text-with-photo {
+    display: flex;
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+    margin-bottom: 30px; /* Отступ между блоками */
+}
+
+/* Фото слева */
+.text-with-photo img {
+    width: 500px; /* Задайте нужный размер изображения */
+    margin-right: 280px; /* Отступ между фото и текстом */
+}
+
+/* Текст справа от фото */
+.text-with-photo div {
+    font-family: 'Anonymous Pro', sans-serif;
+    font-size: 40px;
+    line-height: 1.4;
+    color: #333;
+    width: 100%; /* Текст займет всю оставшуюся ширину */
+}
+
+/* Каждый абзац текста */
+.text-with-photo p {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Устанавливаем box-sizing для всех элементов */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Убираем стили для ссылок в портфолио */
+.portfolio-item a {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: inherit; /* Убираем изменение цвета текста на ссылках */
+}
+
+/* Убираем эффект при наведении на ссылки */
+.portfolio-item a:hover {
+    color: inherit; /* Цвет при наведении остается прежним */
+    cursor: pointer; /* Убираем стандартный стиль курсора, если не нужно */
+}
+
+
+
+/* Устанавливаем box-sizing для всех элементов */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Контейнер для всех блоков */
+.portfolio-container {
+    display: flex; /* Используем Flexbox для горизонтального расположения */
+    justify-content: space-between; /* Располагаем блоки с промежутком */
+    gap: 5px; /* Уменьшаем промежуток между блоками */
+    margin-top: 10px;
+    width: 100%; /* Убедимся, что контейнер занимает 100% ширины */
+    flex-wrap: wrap; /* Разрешаем перенос блоков на следующую строку */
+}
+
+/* Стили для каждого блока портфолио */
+.portfolio-item {
+    width: 33%; /* Каждый блок занимает 1/3 ширины контейнера */
+    height: 800px; /* Увеличиваем высоту блоков */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    position: relative;
+    overflow: hidden; /* Скрываем содержимое, выходящее за пределы блока */
+}
+
+/* Заголовок категории */
+.category-title {
+    font-family: 'BIZ UDMincho', serif;
+    font-size: 44px;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Цифры */
+.number {
+    font-family: 'BIZ UDMincho', serif;
+    font-size: 400px;
+    color: white;
+    text-align: center;
+}
+
+/* Фото внутри блока */
+.portfolio-item img {
+    width: 120%;
+    height: 100%;
+    object-fit: cover; /* Заполнение блока изображением */
+    opacity: 0; /* Исходно скрыто */
+    transition: opacity 0.5s ease-in-out; /* Плавное появление */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Показываем фото при наведении */
+.portfolio-item:hover img {
+    opacity: 1; /* Делает изображение видимым при наведении */
+}
+
+/* Стили для заголовков внутри блока */
+.portfolio-item .category-title, 
+.portfolio-item .number {
+    z-index: 1; /* Текст всегда поверх изображения */
+}
+
+
+/* Контейнер для слайдера и кнопок */
+.presets-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1100px;
+}
+
+
+/* Заголовок "Пресеты" */
+.presets-title {
+    text-align: center; /* Центрируем текст */
+    font-family: 'BIZ UDMincho', serif;
+    font-size: 90px;
+    color: black;
+    margin-bottom: 40px; /* Отступ от заголовка до слайдера */
+}
+
+/* Контейнер для слайдера и кнопок */
+.presets-container {
+    display: flex;
+    justify-content: center; /* Центрируем слайдер и кнопки */
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1100px;
+}
+
+/* Стили для контейнера слайдера */
+.twentytwenty-container {
+    position: relative;
+    width: 603px;  /* Размеры изображения */
+    height: 904px;
+    margin-right: 20px; /* Отступ между слайдером и кнопками */
+}
+
+/* Стили для слайдера */
+.twentytwenty-container img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.twentytwenty-container .twentytwenty-slider {
+    background-color: white;
+    cursor: ew-resize;
+    z-index: 100;
+}
+
+/* Белый ползунок */
+.twentytwenty-container .twentytwenty-slider:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%; /* Начальная позиция по центру */
+    width: 4px;
+    background-color: white;
+}
+
+/* Стили для кнопок */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Выравниваем кнопки по левому краю */
+}
+
+.preset-btn {
+    font-family: 'BIZ UDMincho', serif;
+    font-size: 50px;
+    color: black;
+    background-color: transparent;
+    border: none; /* Убираем обводку */
+    margin-bottom: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    width: 60px;
+    text-align: center;
+}
+
+.preset-btn.active {
+    color: #B40000; /* Когда кнопка активна, она становится красной */
+}
+
+/* Для кнопок в нормальном состоянии */
+.preset-btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* Убираем кнопку активной нажатой */
+.preset-btn:focus {
+    outline: none;
+}
+
+
+/* Стили для блока "Разделы" */
+#sections {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    align-items: flex-start;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+
+/* Левая часть с разделами */
+.left-section {
+    width: 45%;
+}
+
+.section-title {
+    font-family: 'Anonymous Pro', sans-serif;
+    font-weight: bold;
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.section-list {
+    list-style: none;
+    padding: 0;
+    font-family: 'Anonymous Pro', sans-serif;
+    font-size: 20px;
+}
+
+.section-list li {
+    margin-bottom: 10px;
+}
+
+/* Правая часть с контактами */
+.right-section {
+    width: 45%;
+    text-align: right;
+}
+
+.contacts-info {
+    display: flex;
+    flex-direction: column; /* Располагаем элементы в столбик */
+    align-items: flex-end;
+    gap: 15px; /* Отступы между элементами */
+}
+
+.contacts-info a {
+    text-decoration: none; /* Убираем подчёркивание */
+    color: inherit; /* Наследуем цвет текста */
+    font-family: 'Anonymous Pro', sans-serif;
+    font-size: 20px; /* Размер шрифта */
+    cursor: pointer;
+}
+
+.contacts-info a:hover {
+    text-decoration: underline; /* Подчёркивание при наведении */
+    color: #000; /* Меняем цвет при наведении */
+}
+
+.contacts-title {
+    font-family: 'Anonymous Pro', sans-serif;
+    font-weight: bold;
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+/* Иконка Telegram */
+.contacts-info a img {
+    width: 30px; /* Размер иконки */
+    height: 30px; /* Пропорциональный размер */
+    transition: transform 0.3s ease;
+}
+
+.contacts-info a img:hover {
+    transform: scale(1.2); /* Увеличение иконки при наведении */
+}
+
+
+/* Логотип внизу */
+.logo-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.logo {
+    max-width: 350px;
+    height: auto;
+}
+
+
+
+
+/* СТРАНИЦЫ про портфолио */
+
+/* Стиль для стрелки назад */
+.back-arrow {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.back-arrow img {
+    width: 30px;  /* Размер стрелки */
+    height: auto;
+}
+
+/* Заголовок страницы */
+.page-header {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.page-header h1 {
+    font-family: 'BIZ UDMincho', serif;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.page-header p {
+    font-family: 'Anonymous Pro', sans-serif;
+    font-size: 30px;
+    color: #333;
+}
+
+/* Изображение по всей ширине */
+.full-width-image {
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.full-width-image img {
+    width: 100%;
+    height: auto;
+    max-width: 100%; 
+}
+
+/* Логотип внизу */
+.footer {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.logo-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.logo {
+    max-width: 350px;
+    height: auto;
+}
+
+
+/* Горизонтальная линия */
+.horizontal-line-section {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.horizontal-line {
+    width: 794px;
+    height: 4px;
+    border: none;
+    background-color: #000;
+    margin: 0 auto;
+}
+
+/* Контейнер с ссылками */
+.link-container {
+    display: flex;
+    justify-content: space-between;
+    width: 794px;
+    margin: 20px auto;
+}
+
+/* Ссылки */
+.link-left, .link-right {
+    font-family: 'Anonymous Pro', sans-serif;
+    font-size: 40px;
+    text-decoration: none;
+    color: #494949;
+    transition: color 0.3s ease;
+}
+
+.link-left:hover, .link-right:hover {
+    color: #000;
+}
