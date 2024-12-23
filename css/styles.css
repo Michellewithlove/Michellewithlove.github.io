@@ -428,37 +428,44 @@ header {
     text-align: right;
 }
 
+.contacts-info {
+    display: flex;
+    flex-direction: column; /* Располагаем элементы в столбик */
+    align-items: flex-end;
+    gap: 15px; /* Отступы между элементами */
+}
+
+.contacts-info a {
+    text-decoration: none; /* Убираем подчёркивание */
+    color: inherit; /* Наследуем цвет текста */
+    font-family: 'Anonymous Pro', sans-serif;
+    font-size: 20px; /* Размер шрифта */
+    cursor: pointer;
+}
+
+.contacts-info a:hover {
+    text-decoration: underline; /* Подчёркивание при наведении */
+    color: #000; /* Меняем цвет при наведении */
+}
+
 .contacts-title {
     font-family: 'Anonymous Pro', sans-serif;
     font-weight: bold;
     font-size: 45px;
-    margin-bottom: 20px;
-}
-
-.contacts-info {
-    font-family: 'Anonymous Pro', sans-serif;
-    font-size: 20px;
-}
-
-.contacts-info p {
     margin-bottom: 10px;
 }
 
 /* Иконка Telegram */
-.contact-icon {
-    margin-top: 10px;
-}
-
-/* Стиль иконки */
-.contacts a img {
-    width: 30px; /* Уменьшенный размер иконки */
+.contacts-info a img {
+    width: 30px; /* Размер иконки */
     height: 30px; /* Пропорциональный размер */
     transition: transform 0.3s ease;
 }
 
-.contacts a:hover img {
-    transform: scale(5); /* Увеличение иконки при наведении */
+.contacts-info a img:hover {
+    transform: scale(1.2); /* Увеличение иконки при наведении */
 }
+
 
 /* Логотип внизу */
 .logo-container {
